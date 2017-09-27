@@ -38,6 +38,12 @@ int main()
 	power p2(2);
 	power p3(3);
 
+	unique_ptr<int> pint(new int(4));
+
+	auto p = move(pint);
+
+	cout << " 4 to the power 3 (with unique_ptr) --> 4^3  = " << p3(*(p)) << endl;
+
 
 
 	cout << " 6 to the power 3 --> 6^3  = " << p3(6) << endl;
