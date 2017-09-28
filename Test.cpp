@@ -33,6 +33,15 @@ public:
 
 using namespace std;
 
+template <typename T> T abs(T t)
+{
+	if (t < 0)
+	{
+		return -t;
+	}
+	return t;
+};
+
 int main()
 {
 	power p2(2);
@@ -48,6 +57,19 @@ int main()
 
 	cout << " 6 to the power 3 --> 6^3  = " << p3(6) << endl;
 	cout << " 3 to the power 3 --> 3^3  = " << p3(3) << endl;
+
+	cout << " new template function" << abs<int>(-5) << endl;
+	cout << " new template function" << abs<short>(-11) << endl;
+	cout << " new template function" << abs<long>(-999) << endl;
+	cout << " new template function" << abs<float>(-12.343) << endl;
+	cout << " new template function" << abs<double>(-764.386) << endl;
+
+	cout << " new template function" << abs<int>(5) << endl;
+	cout << " new template function" << abs<short>(11) << endl;
+	cout << " new template function" << abs<long>(999) << endl;
+	cout << " new template function" << abs<float>(12.343) << endl;
+	cout << " new template function" << abs<double>(764.386) << endl;
+
     return 0;
 }
 

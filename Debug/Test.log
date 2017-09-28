@@ -1,3 +1,5 @@
 ﻿  Test.cpp
+d:\code\c++\vs17\test\test\test.cpp(64): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\code\c++\vs17\test\test\test.cpp(70): warning C4305: 'argument': truncation from 'double' to 'float'
   Test.vcxproj -> D:\Code\c++\VS17\Test\Debug\Test.exe
   Test.vcxproj -> D:\Code\c++\VS17\Test\Debug\Test.pdb (Partial PDB)
