@@ -6,69 +6,44 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <thread>
 #include <memory>
 
-class power
-{
-private:
-	int pow;
-	power() {};
-
-public:
-	power(int k):pow(k)
-	{
-	}
-
-	int operator () (int x)const
-	{
-		int ret = x;
-		for (int i = 0; i < pow; i++)
-		{
-			ret *= x;
-		}
-		return ret;
-	}
-
-};
 
 using namespace std;
 
-template <typename T> T abs(T t)
+void prints()
 {
-	if (t < 0)
+	int i = 0;
+	while (i < 4)
 	{
-		return -t;
+		cout << "printing sachith" << endl;
+		this_thread::sleep_for(2s);
+		i++;
 	}
-	return t;
-};
+
+}
+
+void printm()
+{
+	int i = 0;
+	while (i < 3)
+	{
+		cout << "printing mandy" << endl;
+		this_thread::sleep_for(2s);
+		i++;
+	}
+}
 
 int main()
 {
-	power p2(2);
-	power p3(3);
-
-	unique_ptr<int> pint(new int(4));
-
-	auto p = move(pint);
-
-	cout << " 4 to the power 3 (with unique_ptr) --> 4^3  = " << p3(*(p)) << endl;
-
-
-
-	cout << " 6 to the power 3 --> 6^3  = " << p3(6) << endl;
-	cout << " 3 to the power 3 --> 3^3  = " << p3(3) << endl;
-
-	cout << " new template function" << abs<int>(-5) << endl;
-	cout << " new template function" << abs<short>(-11) << endl;
-	cout << " new template function" << abs<long>(-999) << endl;
-	cout << " new template function" << abs<float>(-12.343) << endl;
-	cout << " new template function" << abs<double>(-764.386) << endl;
-
-	cout << " new template function" << abs<int>(5) << endl;
-	cout << " new template function" << abs<short>(11) << endl;
-	cout << " new template function" << abs<long>(999) << endl;
-	cout << " new template function" << abs<float>(12.343) << endl;
-	cout << " new template function" << abs<double>(764.386) << endl;
+	cout << "printing main1" << endl;
+	std::thread t1(prints);
+	t1.join();
+	cout << "printing main2" << endl;
+	std::thread t2(printm);
+	t2.join();
+	cout << "printing main3" << endl;
 
     return 0;
 }
